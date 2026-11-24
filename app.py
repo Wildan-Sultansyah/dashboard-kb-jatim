@@ -11,13 +11,22 @@ st.set_page_config(page_title="Potret KB Jawa Timur 2025", page_icon=":material/
 LOGO = pathlib.Path(__file__).parent / "assets" / "logo_bkkbn.png"
 
 
+def _logo_b64() -> str:
+    return base64.b64encode(LOGO.read_bytes()).decode() if LOGO.exists() else ""
+
+
 def _brand_html() -> str:
-    img = ""
-    if LOGO.exists():
-        img = f'<img class="brand-logo" alt="Logo" src="data:image/png;base64,{base64.b64encode(LOGO.read_bytes()).decode()}">'
-    return (f'<div class="brand">{img}<div class="brand-text"><b>Kementerian Kependudukan dan Pembangunan Keluarga/BKKBN</b>'
+    return ('<div class="brand"><div class="brand-text"><b>Kementerian Kependudukan dan Pembangunan Keluarga/BKKBN</b>'
             '<span>Perwakilan BKKBN<br>Provinsi Jawa Timur</span></div></div>')
 
+
+def _logo_bawah_html() -> str:
+    b64 = _logo_b64()
+    if not b64:
+        return ""
+    return ('<style>.logo-bawah{display:flex;justify-content:center;margin:2.5rem 0 1rem 0;}'
+            '.logo-bawah img{width:75%;max-width:260px;height:auto;}</style>'
+            f'<div class="logo-bawah"><img alt="Logo BKKBN" src="data:image/png;base64,{b64}"></div>')
 
 halaman = st.navigation([
     st.Page("views/beranda.py", title="Beranda", icon=":material/home:", default=True),
@@ -31,4 +40,5 @@ with st.sidebar:
     st.markdown(_brand_html(), unsafe_allow_html=True)
     st.markdown('<div class="side-brand">Potret KB Jawa Timur 2025</div>'
                 '<div class="side-note">Data storytelling. Pilih menu di bawah, lalu pilih, klik, dan geser untuk menjelajah.</div>', unsafe_allow_html=True)
+    st.markdown(_logo_bawah_html(), unsafe_allow_html=True)
 halaman.run()
