@@ -1,0 +1,210 @@
+{
+ "bobot_woa": {
+  "capaian_rendah": 0.4,
+  "layanan_rendah": 0.15,
+  "pkb_rendah": 0.15,
+  "stok_kritis": 0.3
+ },
+ "bobot_entropi": {
+  "layanan": 0.492,
+  "pkb": 0.42,
+  "stok": 0.088
+ },
+ "spearman_indeks_alt": {
+  "entropi": 0.942,
+  "PCA": 0.993,
+  "geometrik": 0.946
+ },
+ "moran_dukungan": {
+  "I": 0.032,
+  "p": 0.335
+ },
+ "kesesuaian": {
+  "capaian_vs_dukungan": [
+   0.11,
+   0.513
+  ],
+  "layanan": [
+   0.108,
+   0.518
+  ],
+  "pkb": [
+   0.087,
+   0.603
+  ],
+  "stok": [
+   0.028,
+   0.868
+  ],
+  "bivariate_moran": [
+   0.027,
+   0.428
+  ]
+ },
+ "sensitivitas_tipologi": {
+  "entropi": [
+   "Banyuwangi",
+   "Bondowoso",
+   "Lumajang",
+   "Pamekasan"
+  ],
+  "PCA": [
+   "Banyuwangi",
+   "Bondowoso"
+  ],
+  "geometrik": [
+   "Banyuwangi",
+   "Bondowoso",
+   "Lumajang",
+   "Pamekasan"
+  ]
+ },
+ "moran_kritis_bulanan": {
+  "Sep": [
+   -0.086,
+   0.353
+  ],
+  "Okt": [
+   -0.13,
+   0.225
+  ],
+  "Nov": [
+   -0.166,
+   0.139
+  ],
+  "Des": [
+   -0.159,
+   0.157
+  ]
+ },
+ "korelasi_bulan": {
+  "Sep": [
+   1,
+   0.51,
+   0.37,
+   0.3
+  ],
+  "Okt": [
+   0.51,
+   1,
+   0.79,
+   0.78
+  ],
+  "Nov": [
+   0.37,
+   0.79,
+   1,
+   0.84
+  ],
+  "Des": [
+   0.3,
+   0.78,
+   0.84,
+   1
+  ]
+ },
+ "stok_nol": {
+  "IUD": [
+   6,
+   0,
+   1,
+   2
+  ],
+  "Implan 1 batang": [
+   14,
+   10,
+   11,
+   10
+  ],
+  "Implan 2 batang": [
+   5,
+   2,
+   0,
+   1
+  ],
+  "Suntik progestin": [
+   16,
+   6,
+   3,
+   3
+  ],
+  "Suntik kombinasi": [
+   18,
+   16,
+   16,
+   16
+  ],
+  "Pil progestin": [
+   10,
+   5,
+   5,
+   4
+  ],
+  "Pil kombinasi": [
+   6,
+   0,
+   1,
+   1
+  ],
+  "Kondom": [
+   11,
+   10,
+   13,
+   13
+  ]
+ },
+ "membaik": {
+  "Kota Blitar": 8,
+  "Kota Mojokerto": 7,
+  "Kota Pasuruan": 6,
+  "Kediri": 5,
+  "Sumenep": 5
+ },
+ "memburuk": {
+  "Bojonegoro": 2,
+  "Probolinggo": 2,
+  "Pamekasan": 2,
+  "Kota Malang": 1,
+  "Gresik": 1
+ },
+ "skenario_woa": [
+  [
+   "Bobot sama rata (0,25 tiap layer)",
+   0.948,
+   8
+  ],
+  [
+   "Stok bobot kecil (0,10)",
+   0.94,
+   8
+  ],
+  [
+   "Stok bobot besar (0,50)",
+   0.946,
+   9
+  ],
+  [
+   "Hanya dukungan (tanpa capaian)",
+   0.795,
+   6
+  ],
+  [
+   "Stok = rata-rata Okt-Des",
+   0.984,
+   10
+  ],
+  [
+   "Ambang stok kritis < 2 bulan",
+   0.976,
+   10
+  ]
+ ],
+ "ambang_kritis_bulan": 1.0,
+ "keterbatasan": [
+  "Bobot, ambang, dan target stok adalah asumsi peneliti, bukan standar resmi; karena itu diuji sensitivitasnya.",
+  "Klaim yang boleh dibuat: kesesuaian, kesenjangan, dan prioritas. Bukan pengaruh atau sebab-akibat.",
+  "Pola spasial lemah: Moran's I indeks dukungan hanya 0,032 (p = 0,335); hasil LISA/Gi* mencakup sedikit daerah.",
+  "Stok hanya dari gudang kab/kota (SIRIKA) bulan Sep-Des 2025, saat cakupan laporan stock opname memadai (Nov: 100% gudang).",
+  "Korelasi capaian-dukungan mendekati nol: dalam data ini keduanya tidak selaras, bukan bukti bahwa dukungan tidak penting."
+ ]
+}

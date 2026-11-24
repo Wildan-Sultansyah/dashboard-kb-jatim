@@ -1,0 +1,34 @@
+"""Titik masuk aplikasi: navigasi antar halaman."""
+import base64
+import pathlib
+
+import streamlit as st
+
+st.set_page_config(page_title="Potret KB Jawa Timur 2025", page_icon=":material/monitoring:", layout="wide")
+
+# Logo opsional: taruh berkas logo resmi di assets/logo_bkkbn.png (PNG, sebaiknya berlatar transparan).
+# Logo ditampilkan di atas kartu putih bersudut bulat di samping nama instansi. Bila berkas tidak ada, hanya teks yang tampil.
+LOGO = pathlib.Path(__file__).parent / "assets" / "logo_bkkbn.png"
+
+
+def _brand_html() -> str:
+    img = ""
+    if LOGO.exists():
+        img = f'<img class="brand-logo" alt="Logo" src="data:image/png;base64,{base64.b64encode(LOGO.read_bytes()).decode()}">'
+    return (f'<div class="brand">{img}<div class="brand-text"><b>Kementerian Kependudukan dan Pembangunan Keluarga/BKKBN</b>'
+            '<span>Perwakilan BKKBN<br>Provinsi Jawa Timur</span></div></div>')
+
+
+halaman = st.navigation([
+    st.Page("views/beranda.py", title="Beranda", icon=":material/home:", default=True),
+    st.Page("views/profil_daerah.py", title="Profil Daerah", icon=":material/location_on:"),
+    st.Page("views/capaian_kb.py", title="Capaian KB", icon=":material/bar_chart:"),
+    st.Page("views/dukungan_layanan.py", title="Dukungan Layanan", icon=":material/map:"),
+    st.Page("views/suara_masyarakat.py", title="Suara Masyarakat", icon=":material/forum:"),
+    st.Page("views/panduan.py", title="Panduan & Istilah", icon=":material/help:"),
+])
+with st.sidebar:
+    st.markdown(_brand_html(), unsafe_allow_html=True)
+    st.markdown('<div class="side-brand">Potret KB Jawa Timur 2025</div>'
+                '<div class="side-note">Data storytelling. Pilih menu di bawah, lalu pilih, klik, dan geser untuk menjelajah.</div>', unsafe_allow_html=True)
+halaman.run()

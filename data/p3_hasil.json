@@ -1,0 +1,836 @@
+{
+ "alokon_nama": {
+  "iud": "IUD",
+  "suntik": "KB suntik",
+  "implan": "Implan/susuk",
+  "pil": "Pil KB",
+  "steril": "Steril (MOW/MOP)",
+  "lebih_dari_satu": "Lebih dari satu",
+  "tidak_teridentifikasi": "Tidak teridentifikasi",
+  "kondom": "Kondom"
+ },
+ "ringkas": {
+  "komentar": 2785,
+  "video": 59,
+  "awal": "2024-02-03",
+  "akhir": "2026-11-14",
+  "mentah": 3063,
+  "kebijakan": 84,
+  "pertanyaan_pct": 44.5
+ },
+ "cleaning": [
+  [
+   "Data awal",
+   3063
+  ],
+  [
+   "Hapus teks kosong",
+   3063
+  ],
+  [
+   "Hapus duplikat",
+   3035
+  ],
+  [
+   "Hapus spam, promosi, link",
+   3033
+  ],
+  [
+   "Hapus komentar berisi nama saja",
+   3006
+  ],
+  [
+   "Hapus komentar < 3 kata",
+   2871
+  ],
+  [
+   "Hapus teks kosong setelah normalisasi",
+   2869
+  ],
+  [
+   "Pisahkan video kebijakan",
+   2785
+  ]
+ ],
+ "alokon_n": {
+  "iud": 690,
+  "suntik": 542,
+  "steril": 520,
+  "implan": 465,
+  "pil": 411,
+  "lebih_dari_satu": 87,
+  "tidak_teridentifikasi": 63,
+  "kondom": 7
+ },
+ "alokon_sumber": {
+  "implan": [
+   218,
+   247
+  ],
+  "iud": [
+   403,
+   287
+  ],
+  "kondom": [
+   7,
+   0
+  ],
+  "lebih_dari_satu": [
+   87,
+   0
+  ],
+  "pil": [
+   90,
+   321
+  ],
+  "steril": [
+   216,
+   304
+  ],
+  "suntik": [
+   247,
+   295
+  ],
+  "tidak_teridentifikasi": [
+   0,
+   63
+  ]
+ },
+ "sentimen_bert": {
+  "negatif": 1861,
+  "netral": 649,
+  "positif": 275
+ },
+ "sentimen_lexicon": {
+  "negatif": 2189,
+  "netral": 208,
+  "positif": 388
+ },
+ "sentimen_per_alokon": {
+  "tidak_teridentifikasi": [
+   38.1,
+   52.4,
+   9.5
+  ],
+  "pil": [
+   47.7,
+   41.6,
+   10.7
+  ],
+  "steril": [
+   60.6,
+   27.5,
+   11.9
+  ],
+  "lebih_dari_satu": [
+   70.1,
+   19.5,
+   10.3
+  ],
+  "implan": [
+   72.5,
+   17.8,
+   9.7
+  ],
+  "iud": [
+   73.6,
+   17.2,
+   9.1
+  ],
+  "suntik": [
+   76.6,
+   15.1,
+   8.3
+  ]
+ },
+ "sentimen_per_alokon_teks": {
+  "pil": [
+   63.3,
+   26.7,
+   10.0
+  ],
+  "steril": [
+   66.2,
+   29.2,
+   4.6
+  ],
+  "lebih_dari_satu": [
+   70.1,
+   19.5,
+   10.3
+  ],
+  "implan": [
+   74.8,
+   18.8,
+   6.4
+  ],
+  "iud": [
+   76.4,
+   17.9,
+   5.7
+  ],
+  "suntik": [
+   84.2,
+   13.4,
+   2.4
+  ]
+ },
+ "sentimen_pertanyaan": {
+  "Bukan pertanyaan": [
+   58.3,
+   24.8,
+   16.9
+  ],
+  "Pertanyaan": [
+   77.5,
+   21.5,
+   1.0
+  ]
+ },
+ "kesepakatan_metode": {
+  "sama_persis": 64,
+  "matriks": {
+   "negatif": [
+    73,
+    19,
+    8
+   ],
+   "netral": [
+    47,
+    44,
+    9
+   ],
+   "positif": [
+    42,
+    37,
+    21
+   ]
+  }
+ },
+ "evaluasi_manual": "Belum ada: 0 komentar berlabel manual, sehingga akurasi model belum dapat dihitung.",
+ "pertanyaan_alokon": {
+  "iud": 55.8,
+  "lebih_dari_satu": 49.4,
+  "suntik": 46.1,
+  "implan": 43.9,
+  "steril": 43.7,
+  "pil": 29.2,
+  "kondom": 14.3,
+  "tidak_teridentifikasi": 14.3
+ },
+ "topik": [
+  {
+   "id": 0,
+   "n": 433,
+   "kata": "iud / bulan / pasang / darah",
+   "alokon": [
+    17.1,
+    43.2,
+    0.2,
+    3.9,
+    3.5,
+    7.4,
+    24.7,
+    0
+   ]
+  },
+  {
+   "id": 1,
+   "n": 405,
+   "kata": "bulan / haid / kb / tidak",
+   "alokon": [
+    20.7,
+    27.7,
+    0,
+    2.7,
+    5.4,
+    9.9,
+    33.3,
+    0.2
+   ]
+  },
+  {
+   "id": 2,
+   "n": 389,
+   "kata": "tidak / kb / pasang / jadi",
+   "alokon": [
+    25.2,
+    29.8,
+    0,
+    1.0,
+    17.5,
+    9.8,
+    12.1,
+    4.6
+   ]
+  },
+  {
+   "id": 3,
+   "n": 366,
+   "kata": "steril / pil / tidak / kb",
+   "alokon": [
+    13.7,
+    20.5,
+    0,
+    5.7,
+    13.7,
+    40.7,
+    5.7,
+    0
+   ]
+  },
+  {
+   "id": 4,
+   "n": 354,
+   "kata": "hamil / steril / anak / kb",
+   "alokon": [
+    11.3,
+    11.3,
+    0.3,
+    2.3,
+    10.5,
+    44.9,
+    19.5,
+    0
+   ]
+  },
+  {
+   "id": 5,
+   "n": 226,
+   "kata": "tidak / kb / bulan / haid",
+   "alokon": [
+    17.7,
+    22.6,
+    0,
+    4.4,
+    11.9,
+    17.3,
+    23.9,
+    2.2
+   ]
+  },
+  {
+   "id": 6,
+   "n": 173,
+   "kata": "kb / bulan / tidak / haid",
+   "alokon": [
+    20.2,
+    13.3,
+    0,
+    5.2,
+    16.2,
+    4.0,
+    38.2,
+    2.9
+   ]
+  },
+  {
+   "id": 7,
+   "n": 128,
+   "kata": "menstruasi / kb / tidak / hormon",
+   "alokon": [
+    12.5,
+    34.4,
+    3.1,
+    5.5,
+    11.7,
+    11.7,
+    20.3,
+    0.8
+   ]
+  },
+  {
+   "id": 8,
+   "n": 128,
+   "kata": "hadir / keb / kader / tpk",
+   "alokon": [
+    4.7,
+    6.2,
+    0,
+    0,
+    67.2,
+    0.8,
+    2.3,
+    18.8
+   ]
+  },
+  {
+   "id": 9,
+   "n": 37,
+   "kata": "link / post / link post / tes",
+   "alokon": [
+    0,
+    0,
+    0,
+    0,
+    100,
+    0,
+    0,
+    0
+   ]
+  }
+ ],
+ "topik_tak_terkelompok": 146,
+ "topik_kolom_alokon": [
+  "implan",
+  "iud",
+  "kondom",
+  "lebih_dari_satu",
+  "pil",
+  "steril",
+  "suntik",
+  "tidak_teridentifikasi"
+ ],
+ "jenis_n": {
+  "pertanyaan": 1239,
+  "lainnya": 918,
+  "keluhan": 291,
+  "testimoni": 278,
+  "mitos": 35,
+  "informasi": 24
+ },
+ "jenis_per_alokon": {
+  "tidak_teridentifikasi": [
+   14.3,
+   1.6,
+   4.8,
+   0,
+   0,
+   79.4
+  ],
+  "pil": [
+   29.2,
+   4.6,
+   6.3,
+   0.7,
+   1.5,
+   57.7
+  ],
+  "steril": [
+   43.7,
+   11.2,
+   6.7,
+   0.6,
+   1.2,
+   36.7
+  ],
+  "implan": [
+   43.9,
+   10.3,
+   10.5,
+   1.3,
+   0.4,
+   33.5
+  ],
+  "suntik": [
+   46.1,
+   15.1,
+   12.9,
+   2.0,
+   0.4,
+   23.4
+  ],
+  "lebih_dari_satu": [
+   49.4,
+   18.4,
+   17.2,
+   0,
+   3.4,
+   11.5
+  ],
+  "iud": [
+   55.8,
+   9.4,
+   11.4,
+   1.6,
+   0.7,
+   21.0
+  ]
+ },
+ "jenis_urut": [
+  "pertanyaan",
+  "keluhan",
+  "testimoni",
+  "mitos",
+  "informasi",
+  "lainnya"
+ ],
+ "sentimen_per_jenis": {
+  "informasi": [
+   70.8,
+   12.5,
+   16.7
+  ],
+  "keluhan": [
+   81.1,
+   8.2,
+   10.7
+  ],
+  "lainnya": [
+   47.8,
+   32.2,
+   19.9
+  ],
+  "mitos": [
+   80.0,
+   17.1,
+   2.9
+  ],
+  "pertanyaan": [
+   77.5,
+   21.5,
+   1.0
+  ],
+  "testimoni": [
+   65.1,
+   19.4,
+   15.5
+  ]
+ },
+ "tema": [
+  [
+   "Haid / menstruasi",
+   436,
+   35.2,
+   37.6
+  ],
+  [
+   "Pemasangan / pelepasan / kontrol",
+   333,
+   26.9,
+   29.1
+  ],
+  [
+   "Efek samping / nyeri",
+   214,
+   17.3,
+   37.9
+  ],
+  [
+   "Kehamilan / KB gagal",
+   198,
+   16.0,
+   48.0
+  ],
+  [
+   "Biaya / layanan",
+   152,
+   12.3,
+   43.4
+  ],
+  [
+   "Hubungan intim",
+   99,
+   8.0,
+   34.3
+  ],
+  [
+   "Menyusui / pascasalin",
+   58,
+   4.7,
+   24.1
+  ],
+  [
+   "Waktu / jadwal / lama pakai",
+   49,
+   4.0,
+   44.9
+  ],
+  [
+   "Berat badan",
+   26,
+   2.1,
+   34.6
+  ],
+  [
+   "Kondisi kesehatan",
+   9,
+   0.7,
+   33.3
+  ]
+ ],
+ "pertanyaan_total": 1239,
+ "belum_dibalas_pct": 43.8,
+ "tema_kolom": [
+  "Haid / menstruasi",
+  "Berat badan",
+  "Kehamilan / KB gagal",
+  "Efek samping / nyeri",
+  "Pemasangan / pelepasan / kontrol",
+  "Waktu / jadwal / lama pakai",
+  "Hubungan intim",
+  "Menyusui / pascasalin",
+  "Biaya / layanan",
+  "Kondisi kesehatan"
+ ],
+ "tema_pertanyaan_per_alokon": {
+  "implan": [
+   29.4,
+   4.4,
+   12.3,
+   18.6,
+   34.3,
+   5.9,
+   4.4,
+   4.4,
+   6.4,
+   1.0
+  ],
+  "iud": [
+   38.2,
+   0.8,
+   4.4,
+   21.0,
+   57.9,
+   2.9,
+   7.8,
+   6.8,
+   15.3,
+   0.3
+  ],
+  "lebih_dari_satu": [
+   53.5,
+   4.7,
+   23.3,
+   25.6,
+   39.5,
+   0,
+   9.3,
+   2.3,
+   18.6,
+   0
+  ],
+  "pil": [
+   22.5,
+   0,
+   18.3,
+   5.0,
+   0.8,
+   3.3,
+   14.2,
+   0.8,
+   3.3,
+   0.8
+  ],
+  "steril": [
+   25.1,
+   0.4,
+   31.7,
+   9.7,
+   3.5,
+   2.2,
+   7.5,
+   3.5,
+   7.9,
+   0.9
+  ],
+  "suntik": [
+   46.8,
+   4.4,
+   20.8,
+   22.4,
+   5.2,
+   6.8,
+   8.8,
+   5.2,
+   20.0,
+   1.2
+  ]
+ },
+ "isu_per_alokon": {
+  "implan": [
+   25.2,
+   4.1,
+   8.8,
+   14.6,
+   31.4,
+   3.4,
+   3.9,
+   2.6,
+   6.0,
+   1.1
+  ],
+  "iud": [
+   29.7,
+   0.6,
+   4.5,
+   19.0,
+   50.9,
+   2.0,
+   5.8,
+   5.2,
+   12.8,
+   0.4
+  ],
+  "lebih_dari_satu": [
+   43.7,
+   9.2,
+   18.4,
+   24.1,
+   32.2,
+   0,
+   12.6,
+   2.3,
+   13.8,
+   2.3
+  ],
+  "pil": [
+   15.8,
+   0.2,
+   10.0,
+   2.9,
+   0.5,
+   1.9,
+   5.1,
+   0.5,
+   2.2,
+   0.2
+  ],
+  "steril": [
+   18.1,
+   0.4,
+   27.1,
+   7.5,
+   1.7,
+   1.3,
+   4.4,
+   3.3,
+   7.5,
+   0.4
+  ],
+  "suntik": [
+   40.4,
+   4.6,
+   18.6,
+   17.5,
+   6.6,
+   3.7,
+   6.1,
+   3.7,
+   13.8,
+   0.7
+  ]
+ },
+ "rumor": [
+  [
+   "mandul / susah hamil / tidak subur",
+   7,
+   0.25
+  ],
+  [
+   "kanker / tumor",
+   15,
+   0.54
+  ],
+  [
+   "katanya / kata orang / dengar",
+   58,
+   2.08
+  ],
+  [
+   "mitos / hoax",
+   2,
+   0.07
+  ]
+ ],
+ "rekomendasi": [
+  {
+   "alokon": "iud",
+   "n": 690,
+   "pct_q": 56,
+   "pct_neg": 74,
+   "tema": [
+    [
+     "Pemasangan / pelepasan / kontrol",
+     223,
+     23
+    ],
+    [
+     "Haid / menstruasi",
+     147,
+     22
+    ]
+   ]
+  },
+  {
+   "alokon": "suntik",
+   "n": 542,
+   "pct_q": 46,
+   "pct_neg": 77,
+   "tema": [
+    [
+     "Haid / menstruasi",
+     117,
+     37
+    ],
+    [
+     "Efek samping / nyeri",
+     56,
+     34
+    ]
+   ]
+  },
+  {
+   "alokon": "steril",
+   "n": 520,
+   "pct_q": 44,
+   "pct_neg": 61,
+   "tema": [
+    [
+     "Kehamilan / KB gagal",
+     72,
+     42
+    ],
+    [
+     "Haid / menstruasi",
+     57,
+     33
+    ]
+   ]
+  },
+  {
+   "alokon": "implan",
+   "n": 465,
+   "pct_q": 44,
+   "pct_neg": 72,
+   "tema": [
+    [
+     "Pemasangan / pelepasan / kontrol",
+     70,
+     43
+    ],
+    [
+     "Haid / menstruasi",
+     60,
+     62
+    ]
+   ]
+  },
+  {
+   "alokon": "pil",
+   "n": 411,
+   "pct_q": 29,
+   "pct_neg": 48,
+   "tema": [
+    [
+     "Haid / menstruasi",
+     27,
+     67
+    ],
+    [
+     "Kehamilan / KB gagal",
+     22,
+     41
+    ]
+   ]
+  }
+ ],
+ "keterbatasan": [
+  "Sumber hanya komentar YouTube (cenderung perempuan dewasa pengguna layanan konsultasi), bukan seluruh publik.",
+  "Data berasal dari 59 video terpilih; hasil dipengaruhi video yang ramai.",
+  "Klasifikasi jenis percakapan berbasis aturan sederhana; sentimen memakai model pretrained tanpa evaluasi terhadap label manual.",
+  "Label alokon 54,5% berasal dari kata kunci video, bukan dari teks komentar; hasil per alokon diuji ulang hanya pada komentar yang menyebut alokon di teks.",
+  "Perubahan sentimen antar bulan banyak dipengaruhi video mana yang ramai, bukan tren publik.",
+  "Nama topik masih otomatis (kata kunci), belum dinamai manual."
+ ]
+}
