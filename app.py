@@ -30,6 +30,10 @@ def _sidebar_html() -> str:
               '<div class="side-brand">Potret KB Jawa Timur 2025</div>'
               '<div class="side-note">Data storytelling. Pilih menu di bawah, lalu pilih, klik, dan geser untuk menjelajah.</div>')
 
+import sys
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+from kbdash import theme as T
+T.pasang_css()
 
 halaman = st.navigation([
     st.Page("views/beranda.py", title="Beranda", icon=":material/home:", default=True),
