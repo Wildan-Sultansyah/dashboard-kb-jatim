@@ -16,18 +16,20 @@ def _logo_b64() -> str:
 
 
 def _brand_html() -> str:
-    return ('<div class="brand"><div class="brand-text"><b>Kementerian Kependudukan dan Pembangunan Keluarga/BKKBN</b>'
-            '<span>Perwakilan BKKBN<br>Provinsi Jawa Timur</span></div></div>')
+    return ('<div class="brand"><div class="brand-text"><b style="display:block">Kementerian Kependudukan dan Pembangunan Keluarga/BKKBN</b>'
+            '<span style="display:block">Perwakilan BKKBN<br>Provinsi Jawa Timur</span></div></div>')
 
 
 def _logo_bawah_html() -> str:
     b64 = _logo_b64()
     if not b64:
         return ""
-    return ('<style>.logo-bawah{display:flex;justify-content:center;margin:2.5rem 0 1rem 0;}'
-            '.logo-bawah img{width:75%;max-width:260px;height:auto;}</style>'
+    return ('<style>'
+            '.logo-bawah{position:fixed;bottom:1rem;left:0;width:21rem;display:flex;justify-content:center;z-index:5;pointer-events:none;}'
+            '.logo-bawah img{height:180px;width:auto;}'
+            '</style>'
             f'<div class="logo-bawah"><img alt="Logo BKKBN" src="data:image/png;base64,{b64}"></div>')
-
+    
 halaman = st.navigation([
     st.Page("views/beranda.py", title="Beranda", icon=":material/home:", default=True),
     st.Page("views/profil_daerah.py", title="Profil Daerah", icon=":material/location_on:"),
