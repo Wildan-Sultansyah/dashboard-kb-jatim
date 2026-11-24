@@ -28,7 +28,7 @@ halaman = st.navigation([
     st.Page("views/panduan.py", title="Panduan & Istilah", icon=":material/help:"),
 ])
 with st.sidebar:
+    st.markdown('<style>[data-testid="stSidebarHeader"]{display:none;} '
+                '[data-testid="stSidebarUserContent"]{padding-top:0.5rem;}</style>', unsafe_allow_html=True)
     st.markdown(_brand_html(), unsafe_allow_html=True)
-    st.markdown('<div class="side-brand">Potret KB Jawa Timur 2025</div>'
-                '<div class="side-note">Data storytelling. Pilih menu di bawah, lalu pilih, klik, dan geser untuk menjelajah.</div>', unsafe_allow_html=True)
 halaman.run()
