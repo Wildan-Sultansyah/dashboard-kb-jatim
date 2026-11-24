@@ -6,17 +6,29 @@ import streamlit as st
 
 st.set_page_config(page_title="Potret KB Jawa Timur 2025", page_icon=":material/monitoring:", layout="wide")
 
-# Logo opsional: taruh berkas logo resmi di assets/logo_bkkbn.png (PNG, sebaiknya berlatar transparan).
-# Logo ditampilkan di atas kartu putih bersudut bulat di samping nama instansi. Bila berkas tidak ada, hanya teks yang tampil.
 LOGO = pathlib.Path(__file__).parent / "assets" / "logo_bkkbn.png"
 
+# CSS sidebar: satu blok saja, tombol « tetap ada, sidebar naik sedikit.
+CSS_SIDEBAR = """
+<style>
+[data-testid="stSidebarHeader"]{height:2.5rem;padding:0.5rem 1rem;margin-bottom:0;}
+[data-testid="stSidebarUserContent"]{padding-top:0.5rem;}
+</style>
+"""
 
-def _brand_html() -> str:
+
+@st.cache_data(show_spinner=False)
+def _sidebar_html() -> str:
+    """Dibuat sekali lalu disimpan, jadi tidak dihitung ulang tiap pindah halaman."""
     img = ""
     if LOGO.exists():
-        img = f'<img class="brand-logo" alt="Logo" src="data:image/png;base64,{base64.b64encode(LOGO.read_bytes()).decode()}">'
-    return (f'<div class="brand">{img}<div class="brand-text"><b>Kementerian Kependudukan dan Pembangunan Keluarga/BKKBN</b>'
-            '<span>Perwakilan BKKBN<br>Provinsi Jawa Timur</span></div></div>')
+        b64 = base64.b64encode(LOGO.read_bytes()).decode()
+        img = f'<img class="brand-logo" alt="Logo" src="data:image/png;base64,{b64}">'
+    return (CSS_SIDEBAR
+            + f'<div class="brand">{img}<div class="brand-text"><b>Kementerian Kependudukan dan Pembangunan Keluarga/BKKBN</b>'
+              '<span>Perwakilan BKKBN<br>Provinsi Jawa Timur</span></div></div>'
+              '<div class="side-brand">Potret KB Jawa Timur 2025</div>'
+              '<div class="side-note">Data storytelling. Pilih menu di bawah, lalu pilih, klik, dan geser untuk menjelajah.</div>')
 
 
 halaman = st.navigation([
@@ -28,7 +40,5 @@ halaman = st.navigation([
     st.Page("views/panduan.py", title="Panduan & Istilah", icon=":material/help:"),
 ])
 with st.sidebar:
-    st.markdown('<style>[data-testid="stSidebarHeader"]{display:none;} '
-                '[data-testid="stSidebarUserContent"]{padding-top:0.5rem;}</style>', unsafe_allow_html=True)
-    st.markdown(_brand_html(), unsafe_allow_html=True)
+    st.markdown(_sidebar_html(), unsafe_allow_html=True)
 halaman.run()
