@@ -10,3 +10,8 @@ headless = true
 
 [browser]
 gatherUsageStats = false
+
+[theme.sidebar]
+backgroundColor = "#0F2D63"
+secondaryBackgroundColor = "#1B4F9C"
+textColor = "#FFFFFF"
